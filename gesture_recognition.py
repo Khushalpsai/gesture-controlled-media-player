@@ -1,9 +1,8 @@
 import time
 from collections import deque
+from config import COOLDOWN, STABILITY_COUNT
 
-COOLDOWN = 1.0
 last_trigger = {} #gesture timestamp
-STABILITY_COUNT = 8
 gesture_history = deque(maxlen=STABILITY_COUNT)
 
 def should_trigger(gesture):

@@ -1,13 +1,16 @@
 import cv2
 import time
-from hand_detection import hands, mp_draw, mp_styles, mp_hands, count_raised_fingers, get_gesture_label, hud
+from config import FRAME_WIDTH, FRAME_HEIGHT
 from gesture_recognition import is_stable, should_trigger
 from media_controller import perform_action
+from hand_detection import hands, mp_draw, mp_styles, mp_hands, count_raised_fingers, get_gesture_label
+from ui_overlay import hud
+
 
 # Main loop
 cap = cv2.VideoCapture(0)
-cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
-cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
+cap.set(cv2.CAP_PROP_FRAME_WIDTH, FRAME_WIDTH)
+cap.set(cv2.CAP_PROP_FRAME_HEIGHT, FRAME_HEIGHT)
 
 prev_time = time.time()
 print("Starting hand gesture recognition. Press 'q' to exit.")
