@@ -76,8 +76,8 @@ Press `q` to quit.
 - [x] Phase 1 — Hand detection and gesture recognition
 - [x] Phase 2 — Gesture-to-action mapping with debounce and stability
 - [x] Phase 3 — UI overlay and config
-- [ ] Phase 4 — Icons and visual feedback
-- [ ] Phase 5 — Final polish and packaging
+- [X] Phase 4 — Icons and visual feedback
+- [x] Phase 5 — Final polish and packaging
 
 
 
