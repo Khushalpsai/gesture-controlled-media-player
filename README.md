@@ -29,7 +29,8 @@ Built with Python, MediaPipe, and OpenCV. Works system-wide with any media playe
 - **pyautogui** — system media key control
 
 ## Project Structure
-STRUCTURE:
+
+```
 gesture-controlled-media-player/
 │
 ├── main.py                  # Entry point
@@ -38,6 +39,9 @@ gesture-controlled-media-player/
 ├── media_controller.py      # Media key actions
 ├── requirements.txt         # Dependencies
 └── README.md
+```
+
+---
 
 ## Setup
 
@@ -66,6 +70,7 @@ python main.py
 Press `q` to quit.
 
 
+
 ## Status
 
 - [x] Phase 1 — Hand detection and gesture recognition
@@ -73,6 +78,7 @@ Press `q` to quit.
 - [ ] Phase 3 — UI overlay and config
 - [ ] Phase 4 — Icons and visual feedback
 - [ ] Phase 5 — Final polish and packaging
+
 
 
 ## Author
