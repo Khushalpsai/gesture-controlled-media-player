@@ -23,7 +23,7 @@ Built with Python, MediaPipe, and OpenCV. Works system-wide with any media playe
 
 ## Tech Stack
 
-- **Python 3.11** (using older version of python run in virtual environment because of mediapipe issues)
+- **Python 3.11** (using older version of python ran in virtual environment because of mediapipe issues)
 - **MediaPipe** — hand landmark detection
 - **OpenCV** — webcam feed and visual overlay
 - **pyautogui** — system media key control
