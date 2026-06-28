@@ -7,6 +7,9 @@ from hand_detection import hands, mp_draw, mp_styles, mp_hands, count_raised_fin
 from ui_overlay import hud
 
 
+last_action_time = 0
+
+
 # Main loop
 cap = cv2.VideoCapture(0)
 cap.set(cv2.CAP_PROP_FRAME_WIDTH, FRAME_WIDTH)
@@ -42,13 +45,14 @@ while cap.isOpened():
         gesture = get_gesture_label(finger_states)
         if is_stable(gesture) and should_trigger(gesture):
             perform_action(gesture)
+            last_action_time = time.time()  # Update the last action time
 
     # FPS calculation
     now = time.time()
     fps = 1 / (now - prev_time)
     prev_time = now
 
-    hud(frame, gesture, fps, finger_states)
+    hud(frame, gesture, fps, finger_states, last_action_time)
     cv2.imshow("Hand Gesture Recognition", frame)
 
     if cv2.waitKey(1) & 0xFF == ord('q'):

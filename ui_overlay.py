@@ -1,17 +1,21 @@
 import cv2
 from config import *
+import time
 
-def hud(frame, gesture, fps, finger_states):
+def hud(frame, gesture, fps, finger_states, last_action_time):
     h, w = frame.shape[:2]
 
     # Semi-transparent green bar at bottom
     overlay = frame.copy()
-    cv2.rectangle(overlay, (0, h - 90), (w, h), HUD_BAR_COLOUR, -1)
+    bar_color = HUD_FPS_COLOUR if time.time() - last_action_time < 0.5 else HUD_BAR_COLOUR
+    cv2.rectangle(overlay, (0, h - 90), (w, h), bar_color, -1)
     cv2.addWeighted(overlay, 0.6, frame, 0.4, 0, frame)
 
     # Gesture label
     color = HUD_GESTURE_COLOUR if gesture != "..." else HUD_UNKNOWN_COLOUR
     cv2.putText(frame, gesture, (10, h - 50), cv2.FONT_HERSHEY_SIMPLEX, HUD_GESTURE_FONT_SCALE, color, 2)
+    icon = GESTURE_ICONS.get(gesture, "")
+    cv2.putText(frame, icon, (w - 80, h - 50), cv2.FONT_HERSHEY_SIMPLEX, HUD_SMALL_FONT_SCALE, color, 1)
 
     # FPS counter
     cv2.putText(frame, f"FPS: {int(fps)}", (w - 110, 30),

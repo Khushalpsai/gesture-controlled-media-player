@@ -26,3 +26,13 @@ HUD_BAR_HEIGHT = 90
 HUD_GESTURE_FONT_SCALE = 1
 HUD_FPS_FONT_SCALE = 0.6
 HUD_SMALL_FONT_SCALE = 0.5
+
+#ICONS
+GESTURE_ICONS = {
+    "FIST - Pause/Play": ">/||",
+    "OPEN HAND - Stop": "[]",
+    "THUMBS UP - Vol Up": "VOL+",
+    "POINTING - Next Track": ">>",
+    "PEACE - Previous Track": "<<",
+    "...": "",
+}
